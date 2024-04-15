@@ -26,3 +26,5 @@ void BFS(Graph* graph, int startVertex, colorType* color, int* distance,
 void DFS(Graph* graph, int startVertex, colorType* color, int* distance,
          int* antecessor);
 bool isConnectedUsingBFS(Graph* graph, int startVertex, bool verbose);
+
+void fillGraphRandomly(Graph* graph, int numNodes, int numEdges);

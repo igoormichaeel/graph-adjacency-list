@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "list.h"
 #include "queue.h"
@@ -175,4 +176,15 @@ bool isConnectedUsingBFS(Graph* graph, int startVertex, bool verbose) {
     }
 
     return isConnected;
+}
+
+void fillGraphRandomly(Graph* graph, int numNodes, int numEdges) {
+    srand(time(NULL));  // Seed para gerar números aleatórios
+
+    for (int i = 0; i < numEdges; ++i) {
+        int source = rand() % numNodes;
+        int destination = rand() % numNodes;
+
+        insertEdge(graph, source, destination);
+    }
 }

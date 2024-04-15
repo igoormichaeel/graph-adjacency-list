@@ -28,8 +28,7 @@ init:
 	mkdir $(BIN) $(OBJ)
 
 run:
-# $(BIN)/teste_tempo
-	$(BIN)/teste_perfilamento
+	$(BIN)/teste_tempo
 
 clean:
 	rm -rf $(BIN)/* $(OBJ)/*

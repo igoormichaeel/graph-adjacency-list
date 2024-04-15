@@ -5,17 +5,6 @@
 
 #include "graph.h"
 
-void fillGraphRandomly(Graph* graph, int numNodes, int numEdges) {
-    srand(time(NULL));  // Seed para gerar números aleatórios
-
-    for (int i = 0; i < numEdges; ++i) {
-        int source = rand() % numNodes;
-        int destination = rand() % numNodes;
-
-        insertEdge(graph, source, destination);
-    }
-}
-
 int main() {
     int numNodes = 5000;
     // Definindo a densidade das arestas (exemplo: 5%)
