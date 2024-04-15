@@ -1,0 +1,151 @@
+COMANDO:
+gcc -Wall -pg -O3 -fopt-info-vec -fopt-info-vec-missed -c src/graph.c -I ./include -o obj/graph.o
+
+
+LAÇOS NÃO VETORIZADOS:
+src/graph.c:28:23: missed: couldn't vectorize loop
+src/graph.c:28:23: missed: not vectorized: latch block not empty.
+src/graph.c:24:20: missed: statement clobbers memory: graph_13 = malloc (16);
+src/graph.c:27:22: missed: statement clobbers memory: _3 = malloc (_2);
+src/graph.c:28:69: missed: statement clobbers memory: _8 = newList ();
+src/graph.c:37:23: missed: couldn't vectorize loop
+src/graph.c:37:23: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:38:9: missed: statement clobbers memory: freeList (_5);
+src/graph.c:39:5: missed: statement clobbers memory: free (_7);
+src/graph.c:40:5: missed: statement clobbers memory: free (graph_11(D));
+src/graph.c:51:5: missed: statement clobbers memory: insertListOrd (_5, vDest_9(D));
+src/graph.c:62:5: missed: statement clobbers memory: removeFromList (_5, vDest_9(D));
+src/graph.c:71:23: missed: couldn't vectorize loop
+src/graph.c:71:23: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "%d: ", i_18);
+src/graph.c:73:9: missed: statement clobbers memory: showList (_5);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_putchar (10);
+src/graph.c:89:23: missed: couldn't vectorize loop
+src/graph.c:89:23: missed: not vectorized: control flow in loop.
+src/graph.c:92:21: missed: couldn't vectorize loop
+src/graph.c:92:21: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:28:23: missed: couldn't vectorize loop
+src/graph.c:28:23: missed: not vectorized: latch block not empty.
+src/graph.c:24:20: missed: statement clobbers memory: graph_26 = malloc (16);
+src/graph.c:27:22: missed: statement clobbers memory: _29 = malloc (_28);
+src/graph.c:28:69: missed: statement clobbers memory: _35 = newList ();
+src/graph.c:51:5: missed: statement clobbers memory: insertListOrd (_24, i_51);
+src/graph.c:109:12: missed: couldn't vectorize loop
+src/graph.c:109:12: missed: not vectorized: control flow in loop.
+src/graph.c:115:21: missed: couldn't vectorize loop
+src/graph.c:115:21: missed: not vectorized: control flow in loop.
+src/graph.c:106:20: missed: statement clobbers memory: _6 = newQueue ();
+src/graph.c:107:5: missed: statement clobbers memory: enqueue (_6, startVertex_41(D));
+src/graph.c:109:13: missed: statement clobbers memory: _36 = isEmpty (queue.4_35);
+src/graph.c:127:5: missed: statement clobbers memory: freeQueue (&queue);
+src/graph.c:110:32: missed: statement clobbers memory: processingVertex_56 = peek (queue.1_7);
+src/graph.c:112:9: missed: statement clobbers memory: dequeue (queue.2_8);
+src/graph.c:120:17: missed: statement clobbers memory: enqueue (pretmp_82, _31);
+src/graph.c:139:12: missed: couldn't vectorize loop
+src/graph.c:139:12: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+src/graph.c:144:21: missed: couldn't vectorize loop
+src/graph.c:144:21: missed: not vectorized: number of iterations cannot be computed.
+src/graph.c:145:22: missed: couldn't vectorize loop
+src/graph.c:145:22: missed: not vectorized: control flow in loop.
+src/graph.c:136:20: missed: statement clobbers memory: _6 = newStack ();
+src/graph.c:137:5: missed: statement clobbers memory: push (_6, startVertex_42(D));
+src/graph.c:139:13: missed: statement clobbers memory: _37 = isStackEmpty (stack.9_36);
+src/graph.c:156:5: missed: statement clobbers memory: freeStack (&stack);
+src/graph.c:140:29: missed: statement clobbers memory: processVertex_57 = top (stack.6_7);
+src/graph.c:141:9: missed: statement clobbers memory: pop (stack.7_8);
+src/graph.c:149:17: missed: statement clobbers memory: push (pretmp_75, _32);
+src/graph.c:173:23: missed: couldn't vectorize loop
+src/graph.c:159:6: missed: not vectorized: relevant phi not supported: isConnected_35 = PHI <0(20), isConnected_7(11)>
+src/graph.c:159:71: missed: statement clobbers memory: saved_stack.16_13 = __builtin_stack_save ();
+src/graph.c:161:9: missed: statement clobbers memory: distance.11_17 = __builtin_alloca_with_align (_3, 32);
+src/graph.c:161:37: missed: statement clobbers memory: antecessor.13_19 = __builtin_alloca_with_align (_3, 32);
+src/graph.c:162:15: missed: statement clobbers memory: color.15_21 = __builtin_alloca_with_align (_3, 32);
+src/graph.c:170:5: missed: statement clobbers memory: BFS (graph_14(D), startVertex_23(D), color.15_21, distance.11_17, antecessor.13_19, _6);
+src/graph.c:165:23: missed: statement clobbers memory: __builtin_memset (color.15_21, 0, _39);
+src/graph.c:166:26: missed: statement clobbers memory: __builtin_memset (distance.11_17, 255, _42);
+src/graph.c:167:28: missed: statement clobbers memory: __builtin_memset (antecessor.13_19, 255, _46);
+src/graph.c:170:5: missed: statement clobbers memory: BFS (graph_14(D), startVertex_23(D), color.15_21, distance.11_17, antecessor.13_19, _6);
+src/graph.c:159:6: missed: statement clobbers memory: __builtin_stack_restore (saved_stack.16_13);
+gcc -Wall -pg -O3 -fopt-info-vec -fopt-info-vec-missed -c src/list.c -I ./include -o obj/list.o
+src/list.c:10:18: missed: statement clobbers memory: list_4 = malloc (8);
+src/list.c:21:22: missed: couldn't vectorize loop
+src/list.c:21:22: missed: not vectorized: number of iterations cannot be computed.
+src/list.c:24:13: missed: statement clobbers memory: free (_12);
+src/list.c:26:9: missed: statement clobbers memory: free (list_5(D));
+src/list.c:48:28: missed: couldn't vectorize loop
+src/list.c:48:28: missed: not vectorized: control flow in loop.
+src/list.c:36:24: missed: statement clobbers memory: node_10 = malloc (24);
+src/list.c:53:13: missed: statement clobbers memory: free (node_10);
+src/list.c:82:47: missed: couldn't vectorize loop
+src/list.c:82:47: missed: not vectorized: control flow in loop.
+src/list.c:68:24: missed: statement clobbers memory: node_11 = malloc (24);
+src/list.c:94:24: optimized: basic block part vectorized using 16 byte vectors
+src/list.c:94:24: optimized: basic block part vectorized using 16 byte vectors
+src/list.c:76:20: optimized: basic block part vectorized using 16 byte vectors
+src/list.c: In function ‘insertListOrd’:
+src/list.c:95:23: warning: ‘ant’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   95 |             ant->next = node;
+      |             ~~~~~~~~~~^~~~~~
+src/list.c:109:32: missed: couldn't vectorize loop
+src/list.c:109:32: missed: not vectorized: control flow in loop.
+src/list.c:122:5: missed: statement clobbers memory: free (node_31);
+src/list.c:132:17: missed: couldn't vectorize loop
+src/list.c:132:17: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "%d -> ", _1);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_putchar (10);
+gcc -Wall -pg -O3 -fopt-info-vec -fopt-info-vec-missed -c src/queue.c -I ./include -o obj/queue.o
+src/queue.c:7:25: missed: statement clobbers memory: node_3 = malloc (16);
+src/queue.c:15:20: missed: statement clobbers memory: queue_3 = malloc (24);
+src/queue.c:16:18: optimized: basic block part vectorized using 16 byte vectors
+src/queue.c:27:17: missed: couldn't vectorize loop
+src/queue.c:27:17: missed: not vectorized: number of iterations cannot be computed.
+src/queue.c:30:9: missed: statement clobbers memory: free (node_12);
+src/queue.c:33:5: missed: statement clobbers memory: free (queue_5);
+src/queue.c:7:25: missed: statement clobbers memory: node_13 = malloc (16);
+src/queue.c:66:9: missed: statement clobbers memory: free (node_9);
+gcc -Wall -pg -O3 -fopt-info-vec -fopt-info-vec-missed -c src/stack.c -I ./include -o obj/stack.o
+src/stack.c:7:26: missed: statement clobbers memory: node_3 = malloc (24);
+src/stack.c:9:16: optimized: basic block part vectorized using 16 byte vectors
+src/stack.c:16:20: missed: statement clobbers memory: stack_3 = malloc (24);
+src/stack.c:17:18: optimized: basic block part vectorized using 16 byte vectors
+src/stack.c:28:17: missed: couldn't vectorize loop
+src/stack.c:28:17: missed: not vectorized: number of iterations cannot be computed.
+src/stack.c:31:9: missed: statement clobbers memory: free (node_12);
+src/stack.c:34:5: missed: statement clobbers memory: free (stack_5);
+src/stack.c:7:26: missed: statement clobbers memory: node_14 = malloc (24);
+src/stack.c:9:16: optimized: basic block part vectorized using 16 byte vectors
+src/stack.c:69:9: missed: statement clobbers memory: free (node_9);
+src/stack.c:62:26: optimized: basic block part vectorized using 16 byte vectors
+src/stack.c:78:17: missed: couldn't vectorize loop
+src/stack.c:78:17: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "%d -> ", _1);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_putchar (10);
+gcc -Wall -pg -O3 -fopt-info-vec -fopt-info-vec-missed apps/teste_tempo.c ./obj/*.o -I ./include -o bin/teste_tempo
+apps/teste_tempo.c:11:23: missed: couldn't vectorize loop
+apps/teste_tempo.c:12:22: missed: statement clobbers memory: _3 = rand ();
+apps/teste_tempo.c:9:11: missed: statement clobbers memory: _1 = time (0B);
+apps/teste_tempo.c:9:5: missed: statement clobbers memory: srand (_2);
+apps/teste_tempo.c:12:22: missed: statement clobbers memory: _3 = rand ();
+apps/teste_tempo.c:13:27: missed: statement clobbers memory: _4 = rand ();
+apps/teste_tempo.c:15:9: missed: statement clobbers memory: insertEdge (graph_16(D), source_13, destination_15);
+apps/teste_tempo.c:28:23: missed: couldn't vectorize loop
+apps/teste_tempo.c:28:23: missed: not vectorized: control flow in loop.
+apps/teste_tempo.c:11:23: missed: couldn't vectorize loop
+apps/teste_tempo.c:12:22: missed: statement clobbers memory: _40 = rand ();
+apps/teste_tempo.c:29:25: missed: statement clobbers memory: start_21 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "\n--- Execution %d ---\n", _1);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Number of nodes: %d\n", _2);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Number of edges: %d\n", numEdges_22);
+apps/teste_tempo.c:38:24: missed: statement clobbers memory: graph_24 = newGraph (_2);
+apps/teste_tempo.c:9:11: missed: statement clobbers memory: _38 = time (0B);
+apps/teste_tempo.c:9:5: missed: statement clobbers memory: srand (_39);
+apps/teste_tempo.c:12:22: missed: statement clobbers memory: _40 = rand ();
+apps/teste_tempo.c:13:27: missed: statement clobbers memory: _42 = rand ();
+apps/teste_tempo.c:15:9: missed: statement clobbers memory: insertEdge (graph_24, source_41, destination_43);
+apps/teste_tempo.c:44:28: missed: statement clobbers memory: isConnected_27 = isConnectedUsingBFS (graph_24, 0, 1);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"The graph is not connected."[0]);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __builtin_puts (&"The graph is connected."[0]);
+apps/teste_tempo.c:51:9: missed: statement clobbers memory: freeGraph (graph_24);
+apps/teste_tempo.c:52:23: missed: statement clobbers memory: end_30 = clock ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "Execution time: %.6f seconds\n", elapsedTime_31);
+apps/teste_tempo.c:24:9: optimized: basic block part vectorized using 16 byte vectors
