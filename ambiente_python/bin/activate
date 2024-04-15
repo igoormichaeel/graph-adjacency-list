@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/igoormichaeel/Desktop/pcd/Graphs/ambiente_python"
+VIRTUAL_ENV="/home/igoormichaeel/Desktop/pcd/graph-adjacency-list/ambiente_python"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

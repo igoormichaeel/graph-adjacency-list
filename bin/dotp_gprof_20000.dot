@@ -1,0 +1,18 @@
+digraph {
+	graph [fontname=Arial, nodesep=0.125, ranksep=0.25];
+	node [fontcolor=white, fontname=Arial, height=0, shape=box, style=filled, width=0];
+	edge [fontname=Arial];
+	1 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="main\n99.98%\n(0.00%)"];
+	1 -> 2 [arrowsize="0.99", color="#fd0e00", fontcolor="#fd0e00", fontsize="10.00", label="98.63%\n1×", labeldistance="3.95", penwidth="3.95"];
+	1 -> 6 [arrowsize="0.35", color="#0d1074", fontcolor="#0d1074", fontsize="10.00", label="0.67%\n1×", labeldistance="0.50", penwidth="0.50"];
+	1 -> 7 [arrowsize="0.35", color="#0d1074", fontcolor="#0d1074", fontsize="10.00", label="0.67%\n1×", labeldistance="0.50", penwidth="0.50"];
+	2 [color="#fd0e00", fontcolor="#ffffff", fontsize="10.00", label="fillGraphRandomly\n98.63%\n(0.52%)\n1×"];
+	2 -> 3 [arrowsize="0.99", color="#fc1400", fontcolor="#fc1400", fontsize="10.00", label="98.11%\n9999500×", labeldistance="3.92", penwidth="3.92"];
+	3 [color="#fc1400", fontcolor="#ffffff", fontsize="10.00", label="insertListOrd\n98.11%\n(98.11%)\n9999500×"];
+	4 [color="#0d1074", fontcolor="#ffffff", fontsize="10.00", label="freeList\n0.67%\n(0.67%)\n20000×"];
+	5 [color="#0d1074", fontcolor="#ffffff", fontsize="10.00", label="BFS\n0.67%\n(0.67%)\n1×"];
+	6 [color="#0d1074", fontcolor="#ffffff", fontsize="10.00", label="freeGraph\n0.67%\n(0.00%)\n1×"];
+	6 -> 4 [arrowsize="0.35", color="#0d1074", fontcolor="#0d1074", fontsize="10.00", label="0.67%\n20000×", labeldistance="0.50", penwidth="0.50"];
+	7 [color="#0d1074", fontcolor="#ffffff", fontsize="10.00", label="isConnectedUsingBFS\n0.67%\n(0.00%)\n1×"];
+	7 -> 5 [arrowsize="0.35", color="#0d1074", fontcolor="#0d1074", fontsize="10.00", label="0.67%\n1×", labeldistance="0.50", penwidth="0.50"];
+}

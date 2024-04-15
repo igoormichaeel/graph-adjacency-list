@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/igoormichaeel/Desktop/pcd/Graphs/ambiente_python"
+set -gx VIRTUAL_ENV "/home/igoormichaeel/Desktop/pcd/graph-adjacency-list/ambiente_python"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

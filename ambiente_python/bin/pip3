@@ -1,4 +1,4 @@
-#!/home/igoormichaeel/Desktop/pcd/Graphs/ambiente_python/bin/python3
+#!/home/igoormichaeel/Desktop/pcd/graph-adjacency-list/ambiente_python/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

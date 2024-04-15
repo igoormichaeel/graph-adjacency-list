@@ -3,8 +3,8 @@ OBJ = ./obj
 BIN = ./bin
 APPS = ./apps
 INCLUDE = ./include
-# FLAGS = -Wall -pg
-FLAGS = -Wall -pg -O3 -fopt-info-vec -fopt-info-vec-missed
+FLAGS = -Wall -pg
+# FLAGS = -Wall -pg -O3 -fopt-info-vec -fopt-info-vec-missed
 
 
 all: graphADT myapps
@@ -16,7 +16,7 @@ graphADT: \
 	$(OBJ)/stack.o
 
 myapps: \
-	$(BIN)/teste_tempo
+	$(BIN)/teste_perfilamento
 
 $(OBJ)/%.o: $(SRC)/%.c $(INCLUDE)/%.h
 	gcc $(FLAGS) -c $< -I $(INCLUDE) -o $@
@@ -28,8 +28,13 @@ init:
 	mkdir $(BIN) $(OBJ)
 
 run:
-	$(BIN)/teste_tempo
+	$(BIN)/teste_perfilamento 1250
 
 clean:
 	rm -rf $(BIN)/* $(OBJ)/*
 	clear
+
+
+
+# gprof teste_perfilamento gmon_20000.out -Qdotp100 -Qdotp120 | gprof2dot > dotp_gprof_20000.dot
+# dot -Tpng -odotp_gprof_20000.png dotp_gprof_20000.dot
